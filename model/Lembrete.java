@@ -1,23 +1,22 @@
 package com.diogo.SistemaLembretes.model;
 
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Lembrete {
 
      private String titulo;
      private String descricao;
      private String categoria;
 
-     Scanner teste = new Scanner(System.in);
+
 
 
      public String getTitulo() {
           return titulo;
      }
 
-     public void setTitulo(String titulo) {
+     public String setTitulo (String titulo) {
+
+
 
           if(titulo.length() > 4 && titulo.length() <= 50){
 
@@ -25,8 +24,10 @@ public class Lembrete {
           }else{
 
                System.out.println("FORA DO PADRÃO");
+               this.titulo = null;
           }
 
+          return titulo;
      }
 
      public String getDescricao() {
@@ -41,6 +42,7 @@ public class Lembrete {
           }else{
 
                System.out.println("FORA DO PADRÃO");
+
           }
 
 
@@ -60,6 +62,14 @@ public class Lembrete {
 
                System.out.println("FORA DO PADRÃO");
           }
+
+
+     }
+
+     @Override
+     public String toString() {
+          return "Titulo : " + this.titulo + "\n" + "Descrição : " + this.descricao + "\n" + "Categoria : " + this.categoria + "\n";
+
 
 
      }
